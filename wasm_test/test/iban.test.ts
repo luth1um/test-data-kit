@@ -8,7 +8,7 @@ describe("The IBAN generator", () => {
     const countries = Object.values(IBAN_COUNTRY).filter((value): value is IBAN_COUNTRY => typeof value === "string");
 
     // when / then
-    expect(countries).toHaveLength(2);
+    expect(countries).toHaveLength(3);
   });
 
   for (const country of Object.values(IBAN_COUNTRY).filter(
