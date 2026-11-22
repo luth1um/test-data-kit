@@ -22,3 +22,5 @@ pub fn random_iban(country: IbanCountry) -> String {
         Err(msg) => wasm_bindgen::throw_str(&msg),
     }
 }
+
+// TODO: add wasm function to generate multiple IBANs at once

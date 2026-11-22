@@ -33,9 +33,9 @@ fn random_iban_iceland() -> Result<String, String> {
     random_simple_iban(
         CountryInformation::Iceland.iso_3166_code(),
         ALL_DIGITS,
-        7,
-        ALL_DIGITS_ALL_LETTERS,
-        16,
+        4,
+        ALL_DIGITS,
+        18,
     )
 }
 
