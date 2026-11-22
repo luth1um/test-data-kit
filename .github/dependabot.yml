@@ -1,0 +1,26 @@
+version: 2
+updates:
+  - package-ecosystem: "cargo"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    cooldown:
+      default-days: 7
+      semver-major-days: 28
+  - package-ecosystem: npm
+    directory: "/wasm_test"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 7
+      semver-major-days: 28
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    groups:
+      codeql:
+        patterns:
+          - "github/codeql-action/*"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 7
