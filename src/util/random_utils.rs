@@ -1,6 +1,12 @@
 use getrandom::fill;
 
-pub const ALL_DIGITS: &[&str] = &["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+// TODO: write test
+pub const ALL_DIGITS: &[&str] = &["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+// TODO: write test
+pub const ALL_DIGITS_ALL_LETTERS: &[&str] = &[
+    "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I",
+    "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+];
 
 pub fn push_random_chars(
     string_to_expand: &mut String,

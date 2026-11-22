@@ -1,21 +1,23 @@
 use crate::iban::iban_util::iban_checksum;
 use crate::util::country_info::CountryInformation;
-use crate::util::random_utils::{ALL_DIGITS, push_random_chars};
+use crate::util::random_utils::{ALL_DIGITS, ALL_DIGITS_ALL_LETTERS, push_random_chars};
 use wasm_bindgen::prelude::wasm_bindgen;
 
 #[wasm_bindgen(js_name = IBAN_COUNTRY)]
 pub enum IbanCountry {
     GERMANY,
+    ICELAND,
 }
 
 pub fn generate_random_iban(country: IbanCountry) -> Result<String, String> {
     // TODO: write tests
     match country {
-        IbanCountry::GERMANY => random_german_iban(),
+        IbanCountry::GERMANY => random_iban_germany(),
+        IbanCountry::ICELAND => random_iban_iceland(),
     }
 }
 
-fn random_german_iban() -> Result<String, String> {
+fn random_iban_germany() -> Result<String, String> {
     // TODO: write tests
     random_simple_iban(
         CountryInformation::Germany.iso_3166_code(),
@@ -23,6 +25,17 @@ fn random_german_iban() -> Result<String, String> {
         8,
         ALL_DIGITS,
         10,
+    )
+}
+
+fn random_iban_iceland() -> Result<String, String> {
+    // TODO: write tests
+    random_simple_iban(
+        CountryInformation::Iceland.iso_3166_code(),
+        ALL_DIGITS,
+        7,
+        ALL_DIGITS_ALL_LETTERS,
+        16,
     )
 }
 

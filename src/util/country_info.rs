@@ -1,5 +1,6 @@
 pub enum CountryInformation {
     Germany,
+    Iceland,
 }
 
 impl CountryInformation {
@@ -7,6 +8,7 @@ impl CountryInformation {
         // TODO: write tests
         match self {
             CountryInformation::Germany => "DE",
+            CountryInformation::Iceland => "IS",
         }
     }
 }
