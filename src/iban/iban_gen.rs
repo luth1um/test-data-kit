@@ -3,7 +3,7 @@ use crate::util::country_info::CountryInformation;
 use crate::util::random_utils::{ALL_DIGITS, push_random_chars};
 use wasm_bindgen::prelude::wasm_bindgen;
 
-#[wasm_bindgen]
+#[wasm_bindgen(js_name = IBAN_COUNTRY)]
 pub enum IbanCountry {
     GERMANY,
 }
