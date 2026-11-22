@@ -1,9 +1,10 @@
 # Test-Data Kit
 This library contains generators for test data requiring checksums and/or specific formats (e.g., IBAN).
 The generated data satisfies properties that can be validated offline (like checksums, length, format, etc.).
-Apart from that, the data is generated randomly, such that overlaps with actual real-world data is purely coincidental.
-
+Apart from that, the data is generated randomly, such that overlaps with real-world data is purely coincidental.
 For other test data like names and animals, tools like [Faker](https://fakerjs.dev) might be helpful for you.
+
+By using WebAssembly as one of the targets, this library is available for Rust as well as JavaScript/TypeScript.
 
 ## Available Functions for JavaScript and TypeScript
 
@@ -14,6 +15,10 @@ The following functions are exported by the wasm binary.
 | Function | Description |
 |---------------------------------------------|---------------------------------------------------|
 | `randomIban(country: IBAN_COUNTRY): string` | Generates a random IBAN for the specified country |
+
+## Available Functions for Rust
+
+TODO
 
 ## 🦀 Developing the Tool
 
