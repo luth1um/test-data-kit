@@ -9,12 +9,14 @@ describe("The IBAN generator", () => {
     it(`should generate an IBAN for ${IBAN_COUNTRY[country]}`, () => {
       // given
       const minLength = 15; // shortest IBAN: Norway
+      const maxLength = 33; // longest IBAN: Russia
 
       // when
       const result = randomIban(country);
 
       // then
       expect(result.length).toBeGreaterThanOrEqual(minLength);
+      expect(result.length).toBeLessThanOrEqual(maxLength);
     });
   }
 });
